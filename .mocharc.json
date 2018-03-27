@@ -1,0 +1,7 @@
+{
+    "require": [
+        "@babel/register",
+        "test/helpers/setup"
+    ],
+    "spec": ["test/**/*.spec.js"]
+}

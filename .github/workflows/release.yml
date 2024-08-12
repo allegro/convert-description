@@ -16,6 +16,8 @@ jobs:
           cache: 'npm'
           scope: '@allegro'
           registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
+      - run: npm run build
       - run: npm pkg delete scripts.prepare
       - run: npm version $(echo $VERSION | head -n1 | cut -c2-) -no-git-tag-version -f
         env:

@@ -82,43 +82,6 @@ console.log(JSON.stringify(items));
 > need anything more than the listed options, ask a question by opening an issue or contribute by creating a pull
 > request.
 
-## Development
-
-### Install dependencies
-
-```shell
-npm ci
-```
-
-### Running unit tests
-
-```shell
-npm run test
-```
-
-### Running static code analysis
-
-```shell
-npm run lint
-```
-
-## Release
-
-* Run [acceptance tests] setting *branch* variable with `@allegro/convert-description` branch name to run the tests for.
-* Update `version` in `package.json`.
-* Create and push a git tag.
-
-  ```shell
-    git tag convert-description-x.x.x
-    git push --tags
-    ```
-
-* Merge your code into `master`.
-* Run [release workflow].
-* Profit!
-
 [Allegro Rest API]: https://developer.allegro.pl/tutorials/list-offer-assigned-product-one-request-D7Kj9M71Bu6
 [DOM API]: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
 [jsdom]: https://github.com/jsdom/jsdom
-[acceptance tests]: https://github.com/allegro-internal/convert-description-acceptance-tests/actions/workflows/tests.yml
-[release workflow]: https://github.com/allegro-internal/convert-description/actions/workflows/release.yml

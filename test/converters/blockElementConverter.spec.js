@@ -55,8 +55,7 @@ describe("blockElementConvert", () => {
 
     // then
     dom.should.contain.html(`
-      <p>test <b>#0</b></p>
-      <img src="/test_src"/>
+      <p>test <b>#0</b></p><img src="/test_src"/>
       <p><b>test </b>#1</p>`);
   });
 

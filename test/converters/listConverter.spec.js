@@ -38,11 +38,9 @@ describe("listConverter", () => {
     dom.should.contain.html(
       givenHtmlWithElement(`
       <ul>
-        <li>test #0
-          <p>test #1</p>
+        <li>test #0<p>test #1</p>
         </li>
-        <li>test #2
-          <p>test #3</p>
+        <li>test #2<p>test #3</p>
           <p>test #4</p>
         </li>
       </ul>`),
@@ -299,9 +297,7 @@ describe("listConverter", () => {
       givenHtmlWithElement(`
       <ul>
         <li>test #0</li>
-        <li>test #1
-          <p>test #2</p>
-        </li>
+        <li>test #1<p>test #2</p></li>
       </ul>`),
     );
   });

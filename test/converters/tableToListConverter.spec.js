@@ -293,16 +293,12 @@ describe("tableToListConverter", () => {
 
       // then
       const expectedHtml = `
-      <p>
-        <b>AUDI:</b>
-      </p>
+      <p><b>AUDI:</b></p>
       <ul>
         <li>A2, 1.4, 2000.02 - 2005.08</li>
         <li>A3, 1.4, 2000.02 - 2005.08</li>
       </ul>
-      <p>
-        <b>BMW:</b>
-      </p>
+      <p><b>BMW:</b></p>
       <ul>
         <li>M2, 1.4, 2003.11 - 2005.08</li>
         <li>M3, 1.6, 2002.05 - 2005.08</li>
@@ -352,22 +348,16 @@ describe("tableToListConverter", () => {
 
       // then
       const expectedHtml = `
-      <p>
-        <b>MARKA:</b>
-      </p>
+      <p><b>MARKA:</b></p>
       <ul>
         <li>MODEL, SILNIK, SYMBOL</li>
       </ul>
-      <p>
-        <b>AUDI:</b>
-      </p>
+      <p><b>AUDI:</b></p>
       <ul>
         <li>A2, 1.4, 2000.02 - 2005.08</li>
         <li>A3, 1.4, 2000.02 - 2005.08</li>
       </ul>
-      <p>
-        <b>BMW:</b>
-      </p>
+      <p><b>BMW:</b></p>
       <ul>
         <li>M2, 1.4, 2003.11 - 2005.08</li>
         <li>M3, 1.6, 2002.05 - 2005.08</li>
@@ -425,9 +415,7 @@ describe("tableToListConverter", () => {
 
       // then
       const expectedHtml = `
-      <p>
-        <b>1, 2:</b>
-      </p>
+      <p><b>1, 2:</b></p>
       <ul>
         <li>3, 4, 5, A</li>
         <li>3, 4, 5, B</li>
@@ -455,9 +443,7 @@ describe("tableToListConverter", () => {
 
       // then
       const expectedHtml = `
-      <p>
-        <b>1, 2:</b>
-      </p>
+      <p><b>1, 2:</b></p>
       <ul>
         <li>3, 4, 5</li>
         <li>3, 4, 5, A</li>
@@ -489,16 +475,12 @@ describe("tableToListConverter", () => {
 
       // then
       const expectedHtml = `
-      <p>
-        <b>caption 1:</b>
-      </p>
+      <p><b>caption 1:</b></p>
       <ul>
         <li>A, B, C</li>
         <li>1, 2, 3</li>
       </ul>
-      <p>
-        <b>caption 2:</b>
-      </p>
+      <p><b>caption 2:</b></p>
       <ul>
         <li>11, 12, 13</li>
         <li>11, 12, 23</li>

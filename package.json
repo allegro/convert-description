@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com:allegro/convert-description.git"
+    "url": "git+ssh://git@github.com/allegro/convert-description.git"
   },
   "engines": {
     "node": ">=20",

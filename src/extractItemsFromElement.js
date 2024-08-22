@@ -32,7 +32,9 @@ function extractItemsFromElement(childNode) {
   }
   // if element is img -> create img section
   if (childNode.tagName === IMG_TAG_NAME) {
-    items.push(new ImageItem(childNode.src));
+    if (!isBlankText(childNode.src)) {
+      items.push(new ImageItem(childNode.src));
+    }
   }
 
   return items;

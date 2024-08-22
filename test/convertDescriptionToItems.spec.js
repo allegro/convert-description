@@ -172,6 +172,21 @@ describe("convertDescriptionToItems", () => {
     items.should.eql(expectedItems);
   });
 
+  given("", " ").it("should skip img tag with blank url", (url) => {
+    // given
+    const html = givenHtmlWithContent(`
+        <img src="${url}" />
+        <div>This is a test text</div>
+    `);
+
+    // when
+    const items = convertDescriptionToItems(html, options);
+
+    // then
+    const expectedItems = [new TextItem("<p>This is a test text</p>")];
+    items.should.eql(expectedItems);
+  });
+
   it("should skip tag containing html that converts to empty standardized html", () => {
     // given
     const html = givenHtmlWithContent(`

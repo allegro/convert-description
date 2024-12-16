@@ -33,6 +33,8 @@ npm i @allegro/convert-description jsdom
 
 ## Usage
 
+### API
+
 JavaScript code
 
 ```javascript
@@ -75,6 +77,13 @@ const description = `
 const items = convertDescriptionToItems(description, { parseToDOM });
 
 console.log(JSON.stringify(items));
+```
+
+### CLI
+
+```shell
+$ echo "<p>Hello World</p>" | convert-description
+[{"type":"TEXT","content":"<p>Hello World</p>"}]
 ```
 
 > [!CAUTION]

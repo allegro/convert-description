@@ -16,6 +16,7 @@ const convertDescription = (inputStream, outputStream) => {
     outputStream.write(
       JSON.stringify(convertDescriptionToItems(inputData, { parseToDOM })),
     );
+    outputStream.write("\n");
   });
 };
 

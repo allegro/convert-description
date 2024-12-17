@@ -1,6 +1,6 @@
 {
   "name": "@allegro/convert-description",
-  "description": "Library to convert legacy html description into standardized one.",
+  "description": "A JavaScript library to convert HTML-rich offer & product descriptions into a format accepted by Allegro Rest API.",
   "main": "dist/umd.js",
   "bin": {
     "convert-description": "bin/index.js"

@@ -14,7 +14,7 @@ module.exports = [
     },
   },
   {
-    files: ["*.config.js"],
+    files: ["*.config.js", "bin/**/*.js"],
     languageOptions: {
       globals: globals.node,
     },

@@ -33,6 +33,8 @@ npm i @allegro/convert-description jsdom
 
 ## Usage
 
+### API
+
 JavaScript code
 
 ```javascript
@@ -81,6 +83,13 @@ console.log(JSON.stringify(items));
 > Any option to `convertDescriptionToItems` that is not mentioned in the documentation is subject to change. If you
 > need anything more than the listed options, ask a question by opening an issue or contribute by creating a pull
 > request.
+
+### CLI
+
+```shell
+$ echo "<p>Hello World</p>" | npx @allegro/convert-description
+[{"type":"TEXT","content":"<p>Hello World</p>"}]
+```
 
 [Allegro Rest API]: https://developer.allegro.pl/tutorials/list-offer-assigned-product-one-request-D7Kj9M71Bu6
 [DOM API]: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model

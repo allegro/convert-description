@@ -1,0 +1,37 @@
+import React, { useMemo } from "react";
+import { Tab, Tabs } from "react-bootstrap";
+
+import Description from "../types/Description";
+import TabCard from "./TabCard";
+import CodeField from "./CodeField";
+import DescriptionPreview from "./DescriptionPreview";
+
+interface ConvertedDescriptionPanelProps {
+  value: Description;
+}
+
+const ConvertedDescriptionPanel = ({
+  value,
+}: ConvertedDescriptionPanelProps) => {
+  const stringifiedValue = useMemo(
+    () => (value !== null ? JSON.stringify(value, null, 2) : ""),
+    [value],
+  );
+
+  return (
+    <Tabs defaultActiveKey="source">
+      <Tab eventKey="source" title="Source">
+        <TabCard>
+          <CodeField language="json" readOnly value={stringifiedValue} />
+        </TabCard>
+      </Tab>
+      <Tab eventKey="preview" title="Preview">
+        <TabCard>
+          <DescriptionPreview value={value} />
+        </TabCard>
+      </Tab>
+    </Tabs>
+  );
+};
+
+export default ConvertedDescriptionPanel;

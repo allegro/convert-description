@@ -1,3 +1,4 @@
-/dist
-/node_modules
 .eslintcache
+/dist
+/site/static
+/node_modules

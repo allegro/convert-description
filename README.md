@@ -2,6 +2,12 @@
 
 A JavaScript library to convert HTML-rich offer & product descriptions into a format accepted by [Allegro Rest API].
 
+[![npm version](https://img.shields.io/npm/v/@allegro/convert-description.svg?style=flat-square)](https://www.npmjs.com/package/@allegro/convert-description)
+[![npm downloads](https://img.shields.io/npm/dm/@allegro/convert-description.svg?style=flat-square)](https://www.npmjs.com/package/@allegro/convert-description)
+[![GitHub license](https://img.shields.io/github/license/allegro/convert-description.svg?style=flat-square)](https://github.com/allegro/convert-description/blob/main/LICENSE)
+
+[Live demo](https://allegro.github.io/convert-description/).
+
 ## Motivation
 
 Provide means to ease the conversion of HTML-rich offer & product descriptions into a format accepted by [Allegro Rest API].

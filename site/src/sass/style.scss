@@ -1,0 +1,102 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+
+$font-family-sans-serif: "Open Sans", sans-serif;
+$border-radius: 0;
+$btn-font-size: 14px;
+$primary: #ff6a19;
+
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/variables-dark";
+
+@import "../../../node_modules/bootstrap/scss/maps";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/root";
+
+@import "../../../node_modules/bootstrap/scss/buttons";
+@import "../../../node_modules/bootstrap/scss/button-group";
+@import "../../../node_modules/bootstrap/scss/card";
+@import "../../../node_modules/bootstrap/scss/utilities";
+@import "../../../node_modules/bootstrap/scss/reboot";
+@import "../../../node_modules/bootstrap/scss/type";
+@import "../../../node_modules/bootstrap/scss/images";
+@import "../../../node_modules/bootstrap/scss/containers";
+@import "../../../node_modules/bootstrap/scss/grid";
+@import "../../../node_modules/bootstrap/scss/spinners";
+@import "../../../node_modules/bootstrap/scss/nav";
+@import "../../../node_modules/bootstrap/scss/helpers";
+
+@import "../../../node_modules/bootstrap/scss/utilities/api";
+
+.btn {
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  color: white !important;
+}
+
+.description-container {
+  width: 100%;
+  height: calc(100vh - 120px);
+  overflow-y: scroll;
+  resize: none;
+  border: none;
+}
+
+.description *, .description *::after, .description *::before {
+  box-sizing: border-box;
+}
+
+.description .section:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.description .item {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.description .text-item h1, .description .text-item h2 {
+  display: block;
+  font-family: "Roboto", "Open Sans", sans-serif;
+  font-weight: 500;
+  margin: 18px 0;
+}
+
+.description .text-item p {
+  margin: 16px 0;
+  word-wrap: break-word;
+}
+
+.description .text-item h1 {
+  color: #444444;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.description .text-item h2 {
+  color: #444444;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+.description .text-item ol, .description .text-item ul {
+  padding-left: 40px;
+  margin: 16px 0;
+}
+
+.description .text-item {
+  color: #444444;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.description .image-item img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}

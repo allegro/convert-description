@@ -47,7 +47,7 @@ const reducer = handleActions(
         ...state,
         htmlDescription: html,
         htmlDescriptionToConvert: html,
-        convertedDescription: convert(html),
+        convertedDescription: html ? convert(html) : null,
       };
     },
   },

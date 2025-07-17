@@ -7,7 +7,7 @@ import CodeField from "./CodeField";
 import DescriptionPreview from "./DescriptionPreview";
 
 interface ConvertedDescriptionPanelProps {
-  value: Description;
+  value: Description | null;
 }
 
 const ConvertedDescriptionPanel = ({

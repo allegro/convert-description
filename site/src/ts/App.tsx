@@ -1,8 +1,8 @@
 import { Action, createActions, handleActions } from "redux-actions";
 import React, { useReducer } from "react";
 import { ButtonToolbar, Col, Container, Row, Navbar } from "react-bootstrap";
-import ConvertButton from "./components/ConvertButton";
 
+import ConvertButton from "./components/ConvertButton";
 import ConvertedDescriptionPanel from "./components/ConvertedDescriptionPanel";
 import HtmlDescriptionPanel from "./components/HtmlDescriptionPanel";
 import PasteFromClipboardButton from "./components/PasteFromClipboardButton";

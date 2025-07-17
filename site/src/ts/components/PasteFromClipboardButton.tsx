@@ -16,7 +16,7 @@ const PasteFromClipboardButton = ({ onPaste }: HtmlSourceSelectorProps) => {
   };
 
   return (
-    <Button variant="secondary" onClick={handlePasteFromClipboard}>
+    <Button variant="primary" onClick={handlePasteFromClipboard}>
       Paste From Clipboard
     </Button>
   );

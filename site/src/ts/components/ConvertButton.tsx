@@ -27,7 +27,7 @@ const ConvertButton = ({
 
   return (
     <Button
-      variant="secondary"
+      variant="primary"
       className={className}
       disabled={disabled}
       onClick={onConvert}

@@ -1,6 +1,6 @@
 import { Action, createActions, handleActions } from "redux-actions";
 import React, { useReducer } from "react";
-import { ButtonToolbar, Col, Container, Row } from "react-bootstrap";
+import { ButtonToolbar, Col, Container, Row, Navbar } from "react-bootstrap";
 import ConvertButton from "./components/ConvertButton";
 
 import ConvertedDescriptionPanel from "./components/ConvertedDescriptionPanel";
@@ -58,44 +58,56 @@ const App = () => {
   const [state, dispatch] = useReducer(reducer, defaultState);
 
   return (
-    <Container fluid>
-      <Row>
-        <Col>
-          <ButtonToolbar className="py-3 column-gap-3">
-            <ConvertButton
-              disabled={
-                state.htmlDescription === "" ||
-                state.htmlDescription === state.htmlDescriptionToConvert
-              }
-              onConvert={() => {
-                dispatch(convertHtmlDescription(null));
+    <>
+      <Navbar expand="lg" className="bg-body-tertiary">
+        <Container fluid>
+          <Navbar.Brand>
+            Live demo of @allegro/description-converter
+          </Navbar.Brand>
+          <a href="https://github.com/allegro/convert-description">
+            <i className="bi bi-github fs-2 text-black"></i>
+          </a>
+        </Container>
+      </Navbar>
+      <Container fluid>
+        <Row>
+          <Col>
+            <ButtonToolbar className="py-3 column-gap-3">
+              <ConvertButton
+                disabled={
+                  state.htmlDescription === "" ||
+                  state.htmlDescription === state.htmlDescriptionToConvert
+                }
+                onConvert={() => {
+                  dispatch(convertHtmlDescription(null));
+                }}
+              />
+              <PasteFromClipboardButton
+                onPaste={(value) => {
+                  dispatch(convertHtmlDescription(value));
+                }}
+              />
+            </ButtonToolbar>
+          </Col>
+        </Row>
+        <Row>
+          <Col lg={6} className="mb-md-2">
+            <HtmlDescriptionPanel
+              value={state.htmlDescription}
+              onChange={(value) => {
+                dispatch(setHtmlDescription(value));
+              }}
+              onConvert={(text) => {
+                dispatch(convertHtmlDescription(text));
               }}
             />
-            <PasteFromClipboardButton
-              onPaste={(value) => {
-                dispatch(convertHtmlDescription(value));
-              }}
-            />
-          </ButtonToolbar>
-        </Col>
-      </Row>
-      <Row>
-        <Col lg={6} className="mb-md-2">
-          <HtmlDescriptionPanel
-            value={state.htmlDescription}
-            onChange={(value) => {
-              dispatch(setHtmlDescription(value));
-            }}
-            onConvert={(text) => {
-              dispatch(convertHtmlDescription(text));
-            }}
-          />
-        </Col>
-        <Col lg={6} className="mb-md-2">
-          <ConvertedDescriptionPanel value={state.convertedDescription} />
-        </Col>
-      </Row>
-    </Container>
+          </Col>
+          <Col lg={6} className="mb-md-2">
+            <ConvertedDescriptionPanel value={state.convertedDescription} />
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 };
 

@@ -4,6 +4,9 @@ $font-family-sans-serif: "Open Sans", sans-serif;
 $border-radius: 0;
 $btn-font-size: 14px;
 $primary: #ff6a19;
+$bootstrap-icons-font-dir: "../../../node_modules/bootstrap-icons/font/fonts";
+
+@import "../../../node_modules/bootstrap-icons/font/bootstrap-icons";
 
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/variables-dark";
@@ -23,6 +26,7 @@ $primary: #ff6a19;
 @import "../../../node_modules/bootstrap/scss/grid";
 @import "../../../node_modules/bootstrap/scss/spinners";
 @import "../../../node_modules/bootstrap/scss/nav";
+@import "../../../node_modules/bootstrap/scss/navbar";
 @import "../../../node_modules/bootstrap/scss/helpers";
 
 @import "../../../node_modules/bootstrap/scss/utilities/api";
@@ -37,7 +41,7 @@ $primary: #ff6a19;
 
 .description-container {
   width: 100%;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 11rem);
   overflow-y: scroll;
   resize: none;
   border: none;

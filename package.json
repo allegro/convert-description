@@ -79,6 +79,7 @@
     "*.md": "markdownlint --fix"
   },
   "dependencies": {
+    "bootstrap-icons": "1.13.1",
     "deepmerge": "4.3.1",
     "jsdom": "25.0.1"
   }

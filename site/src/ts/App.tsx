@@ -7,7 +7,7 @@ import ConvertedDescriptionPanel from "./components/ConvertedDescriptionPanel";
 import HtmlDescriptionPanel from "./components/HtmlDescriptionPanel";
 import PasteFromClipboardButton from "./components/PasteFromClipboardButton";
 import Description from "./types/Description";
-import convert from "./utils/convert";
+import convertDescription from "./utils/convertDescription";
 
 interface State {
   htmlDescription: string;
@@ -47,7 +47,7 @@ const reducer = handleActions(
         ...state,
         htmlDescription: html,
         htmlDescriptionToConvert: html,
-        convertedDescription: html ? convert(html) : null,
+        convertedDescription: html ? convertDescription(html) : null,
       };
     },
   },

@@ -3,13 +3,15 @@ import Description, { Item } from "../types/Description";
 const ITEMS_PER_SECTION = 2;
 
 declare global {
-  const convertDescription: {
-    convertDescriptionToItems(description: string): Item[];
-  };
+  interface Window {
+    convertDescription: {
+      convertDescriptionToItems(description: string): Item[];
+    };
+  }
 }
 
-const convert = (description: string) => {
-  const items = convertDescription.convertDescriptionToItems(
+const convertDescription = (description: string) => {
+  const items = window.convertDescription.convertDescriptionToItems(
     description,
   ) as Item[];
   return layoutItems(items);
@@ -33,4 +35,4 @@ const layoutItems = (items: Item[]): Description => {
   return { sections };
 };
 
-export default convert;
+export default convertDescription;

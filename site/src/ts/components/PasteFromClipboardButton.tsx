@@ -10,7 +10,7 @@ const PasteFromClipboardButton = ({ onPaste }: HtmlSourceSelectorProps) => {
     try {
       const clipboardText = await navigator.clipboard.readText();
       onPaste(clipboardText);
-    } catch (err) {
+    } catch (_) {
       alert("Failed to read from clipboard. Please check browser permissions.");
     }
   };

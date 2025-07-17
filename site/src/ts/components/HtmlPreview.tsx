@@ -15,7 +15,7 @@ const HtmlPreview = ({ value }: HtmlPreviewProps) => {
       setIsLoading(true);
       setPreviousValue(value);
     }
-  }, [value]);
+  }, [value, previousValue]);
 
   const iframeRef = useRef<HTMLIFrameElement>(null);
 

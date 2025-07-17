@@ -22,7 +22,12 @@ const ConvertedDescriptionPanel = ({
     <Tabs defaultActiveKey="source">
       <Tab eventKey="source" title="Source">
         <TabCard>
-          <CodeField language="json" readOnly value={stringifiedValue} />
+          <CodeField
+            language="json"
+            placeholder="The output of convertDescriptionToItems will be wrapped into two-column sections and displayed here"
+            readOnly
+            value={stringifiedValue}
+          />
         </TabCard>
       </Tab>
       <Tab eventKey="preview" title="Preview">

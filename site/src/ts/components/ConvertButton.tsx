@@ -32,6 +32,7 @@ const ConvertButton = ({
       disabled={disabled}
       onClick={onConvert}
     >
+      <i className="bi bi-arrow-repeat me-2"></i>
       {`Convert (${getModifierKey()}+Enter)`}
     </Button>
   );

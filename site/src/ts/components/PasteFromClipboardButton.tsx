@@ -17,6 +17,7 @@ const PasteFromClipboardButton = ({ onPaste }: HtmlSourceSelectorProps) => {
 
   return (
     <Button variant="primary" onClick={handlePasteFromClipboard}>
+      <i className="bi bi-clipboard me-2"></i>
       Paste From Clipboard
     </Button>
   );

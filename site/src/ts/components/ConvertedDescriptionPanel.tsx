@@ -20,7 +20,14 @@ const ConvertedDescriptionPanel = ({
 
   return (
     <Tabs defaultActiveKey="source">
-      <Tab eventKey="source" title="Source">
+      <Tab
+        eventKey="source"
+        title={
+          <>
+            <i className="bi bi-code me-1"></i> Source
+          </>
+        }
+      >
         <TabCard>
           <CodeField
             language="json"
@@ -30,7 +37,14 @@ const ConvertedDescriptionPanel = ({
           />
         </TabCard>
       </Tab>
-      <Tab eventKey="preview" title="Preview">
+      <Tab
+        eventKey="preview"
+        title={
+          <>
+            <i className="bi bi-eye me-1"></i> Preview
+          </>
+        }
+      >
         <TabCard>
           <DescriptionPreview value={value} />
         </TabCard>

@@ -54,7 +54,6 @@ const useDescriptionState = () => {
 
   return useMemo(
     () => ({
-      state,
       getHtmlDescription: () => state.htmlDescription,
       getConvertedDescription: () => state.convertedDescription,
       isHtmlDescriptionConverted: () =>

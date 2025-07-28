@@ -647,4 +647,17 @@ describe("convertDescriptionToItems", () => {
     ];
     items.should.eql(expectedItems);
   });
+
+  it("should preserve emoticons", () => {
+    // given
+    const html = givenHtmlWithContent(`
+      <div>test 😀</div>`);
+
+    // when
+    const items = convertDescriptionToItems(html, options);
+
+    // then
+    const expectedItems = [new TextItem("<p>test 😀</p>")];
+    items.should.eql(expectedItems);
+  });
 });

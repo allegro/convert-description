@@ -660,4 +660,17 @@ describe("convertDescriptionToItems", () => {
     const expectedItems = [new TextItem("<p>test 😀</p>")];
     items.should.eql(expectedItems);
   });
+
+  it("should sanitize script content", () => {
+    // given
+    const html = givenHtmlWithContent(`
+      <div>test #0</div><script>console.log("test #1")</script>`);
+
+    // when
+    const items = convertDescriptionToItems(html, options);
+
+    // then
+    const expectedItems = [new TextItem("<p>test #0</p>")];
+    items.should.eql(expectedItems);
+  });
 });

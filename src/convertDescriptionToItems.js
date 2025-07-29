@@ -6,6 +6,8 @@ import converter from "./converters";
 import polyfillDOM from "./libs/polyfillDOM";
 import { resolveOptions } from "./options";
 
+const NOT_ALLOWED_TAGS = new Set(["script"]);
+
 function convertDescriptionToItems(description, options = {}) {
   const opts = resolveOptions(options);
   const { ruleSet, parseToDOM, validators } = opts;
@@ -14,6 +16,7 @@ function convertDescriptionToItems(description, options = {}) {
     allowedTags: false,
     allowedAttributes: false,
     allowVulnerableTags: true,
+    exclusiveFilter: (frame) => NOT_ALLOWED_TAGS.has(frame.tag),
   });
 
   return parseToDOM(sanitizedDescription, (dom) => {

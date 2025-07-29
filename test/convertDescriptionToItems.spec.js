@@ -664,7 +664,8 @@ describe("convertDescriptionToItems", () => {
   it("should sanitize script content", () => {
     // given
     const html = givenHtmlWithContent(`
-      <div>test #0</div><script>console.log("test #1")</script>`);
+      <div>test #0</div><script>console.log("test #1")</script>
+    `);
 
     // when
     const items = convertDescriptionToItems(html, options);

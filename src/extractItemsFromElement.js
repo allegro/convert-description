@@ -1,4 +1,5 @@
 import extractHtml from "./libs/extractHtml";
+import removeEmptyElements from "./libs/removeEmptyElements";
 import Node from "./constants/Node";
 import isBlankText from "./libs/isBlankText";
 import ImageItem from "./model/description/ImageItem";
@@ -25,6 +26,7 @@ function extractItemsFromElement(childNode) {
     extractItems(childNode).forEach((item) => items.push(item));
     // element contains text only -> create text section
   } else if (!isBlankText(childNode.textContent)) {
+    removeEmptyElements(childNode);
     const sanitizedHtml = extractHtml(childNode);
     if (sanitizedHtml.length > EMPTY_SECTION_LENGTH) {
       items.push(new TextItem(sanitizedHtml));

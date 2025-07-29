@@ -1,4 +1,4 @@
-import sanitizeHtml from "sanitize-html";
+import DOMPurify from "isomorphic-dompurify";
 
 import clearDescription from "./clearDescription";
 import extractItemsFromElement from "./extractItemsFromElement";
@@ -6,17 +6,14 @@ import converter from "./converters";
 import polyfillDOM from "./libs/polyfillDOM";
 import { resolveOptions } from "./options";
 
-const NOT_ALLOWED_TAGS = new Set(["script"]);
-
 function convertDescriptionToItems(description, options = {}) {
   const opts = resolveOptions(options);
   const { ruleSet, parseToDOM, validators } = opts;
 
-  const sanitizedDescription = sanitizeHtml(description, {
-    allowedTags: false,
-    allowedAttributes: false,
-    allowVulnerableTags: true,
-    exclusiveFilter: (frame) => NOT_ALLOWED_TAGS.has(frame.tag),
+  const sanitizedDescription = DOMPurify.sanitize(description, {
+    USE_PROFILES: { html: true },
+    FORCE_BODY: true,
+    ADD_TAGS: ["galeria"],
   });
 
   return parseToDOM(sanitizedDescription, (dom) => {

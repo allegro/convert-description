@@ -4,7 +4,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 const { Logger } = require("sass");
 
+const packageJson = require("./package.json");
+
 module.exports = [
+  // Browser build - bundles all dependencies
   {
     entry: path.resolve(__dirname, "src/index.js"),
     module: {
@@ -19,7 +22,7 @@ module.exports = [
       ],
     },
     output: {
-      filename: "umd.js",
+      filename: "index.umd.min.js",
       globalObject: "this",
       library: {
         name: "convertDescription",
@@ -27,6 +30,58 @@ module.exports = [
       },
     },
   },
+  // CJS Node build - externalizes dependencies
+  {
+    entry: path.resolve(__dirname, "src/index.js"),
+    mode: "development",
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: "babel-loader",
+          },
+        },
+      ],
+    },
+    externals: Object.keys(packageJson.dependencies),
+    output: {
+      filename: "index.cjs.js",
+      library: {
+        type: "commonjs2",
+      },
+    },
+    optimization: {
+      minimize: false,
+    },
+  },
+  // ESM Node build - externalizes dependencies
+  {
+    entry: path.resolve(__dirname, "src/index.js"),
+    mode: "development",
+    externals: Object.keys(packageJson.dependencies),
+    output: {
+      filename: "index.es.mjs",
+      library: { type: "module" },
+    },
+    experiments: {
+      outputModule: true,
+    },
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: { loader: "babel-loader" },
+        },
+      ],
+    },
+    optimization: {
+      minimize: false,
+    },
+  },
+  // Site build - for development and production
   {
     entry: path.resolve(__dirname, "site/src/ts/index.tsx"),
     plugins: [

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const { JSDOM } = require("jsdom");
 
-const { convertDescriptionToItems } = require("../dist/umd.js");
+const { convertDescriptionToItems } = require("../dist/index.cjs.js");
 
 const parseToDOM = (html) => new JSDOM(html);
 

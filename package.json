@@ -1,9 +1,18 @@
 {
   "name": "@allegro/convert-description",
   "description": "A JavaScript library to convert HTML-rich offer & product descriptions into a format accepted by Allegro Rest API.",
-  "main": "dist/umd.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.mjs",
+  "browser": "dist/index.umd.min.js",
   "bin": {
     "convert-description": "bin/index.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.mjs",
+      "require": "./dist/index.cjs.js",
+      "browser": "./dist/index.umd.min.js"
+    }
   },
   "scripts": {
     "build": "webpack --mode production",
@@ -77,7 +86,8 @@
     "webpack-dev-server": "5.2.1"
   },
   "files": [
-    "dist/"
+    "dist/",
+    "bin/"
   ],
   "lint-staged": {
     "*.{js,md}": "eslint --cache --fix",

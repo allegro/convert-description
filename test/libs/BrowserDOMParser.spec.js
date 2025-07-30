@@ -1,4 +1,4 @@
-import registerDOM from "../../src/libs/registerDOM";
+import registerDOM from "../helpers/registerDOM";
 import BrowserDOMParser from "../../src/libs/BrowserDOMParser";
 
 describe("BrowserDOMParser", () => {

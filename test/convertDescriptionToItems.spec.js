@@ -3,7 +3,7 @@ import given from "mocha-testdata";
 import sinon from "sinon";
 
 import convertDescriptionToItems from "../src/convertDescriptionToItems";
-import registerDOM from "../src/libs/registerDOM";
+import registerDOM from "./helpers/registerDOM";
 import ImageItem from "../src/model/description/ImageItem";
 import TextItem from "../src/model/description/TextItem";
 
